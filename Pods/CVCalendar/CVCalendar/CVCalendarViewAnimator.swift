@@ -69,7 +69,7 @@ private extension CVCalendarViewAnimator {
 
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3,
                                        initialSpringVelocity: 0.1,
-                                       options: UIView.AnimationOptions.beginFromCurrentState,
+                                       options: UIViewAnimationOptions.beginFromCurrentState,
                                        animations: {
                 dayView.selectionView?.transform = CGAffineTransform(scaleX: 1, y: 1)
                 dayView.dayLabel?.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -82,11 +82,11 @@ private extension CVCalendarViewAnimator {
             dayView, completion in
             UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.6,
                                        initialSpringVelocity: 0.8,
-                                       options: UIView.AnimationOptions.curveEaseOut, animations: {
+                                       options: UIViewAnimationOptions.curveEaseOut, animations: {
                 dayView.selectionView!.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             }) { _ in
                 UIView.animate(withDuration: 0.2, delay: 0,
-                                           options: UIView.AnimationOptions(),
+                                           options: UIViewAnimationOptions(),
                                            animations: {
                     if let selectionView = dayView.selectionView {
                         selectionView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -116,7 +116,7 @@ private extension CVCalendarViewAnimator {
         return {
             dayView, completion in
             UIView.animate(withDuration: 0.25, delay: 0,
-                                       options: UIView.AnimationOptions(),
+                                       options: UIViewAnimationOptions(),
                                        animations: { () -> Void in
                 dayView.selectionView?.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 dayView.selectionView?.alpha = 0.0

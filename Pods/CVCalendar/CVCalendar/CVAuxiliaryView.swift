@@ -10,25 +10,25 @@ import UIKit
 
 public final class CVAuxiliaryView: UIView {
     public var shape: CVShape!
-    @objc public var strokeColor: UIColor! {
+    public var strokeColor: UIColor! {
         didSet {
             setNeedsDisplay()
         }
     }
 
-    @objc public var fillColor: UIColor! {
+    public var fillColor: UIColor! {
         didSet {
             setNeedsDisplay()
         }
     }
 
-    @objc public let defaultFillColor = UIColor.colorFromCode(0xe74c3c)
+    public let defaultFillColor = UIColor.colorFromCode(0xe74c3c)
 
     fileprivate var radius: CGFloat {
         return (min(frame.height, frame.width) - 10) / 2
     }
 
-    @objc public unowned let dayView: DayView
+    public unowned let dayView: DayView
 
     public init(dayView: DayView, rect: CGRect, shape: CVShape) {
         self.dayView = dayView
@@ -82,14 +82,14 @@ public final class CVAuxiliaryView: UIView {
 }
 
 extension CVAuxiliaryView {
-    @objc public func updateFrame(_ frame: CGRect) {
+    public func updateFrame(_ frame: CGRect) {
         self.frame = frame
         setNeedsDisplay()
     }
 }
 
 extension CVAuxiliaryView {
-    @objc func circlePath() -> UIBezierPath {
+    func circlePath() -> UIBezierPath {
         let arcCenter = CGPoint(x: frame.width / 2, y: frame.height / 2)
         let startAngle = CGFloat(0)
         let endAngle = CGFloat(Double.pi * 2.0)
@@ -101,7 +101,7 @@ extension CVAuxiliaryView {
         return path
     }
 
-    @objc func rightFlagPath() -> UIBezierPath {
+    func rightFlagPath() -> UIBezierPath {
 //        let appearance = dayView.calendarView.appearance
 //        let offset = appearance.spaceBetweenDayViews!
 
@@ -118,7 +118,7 @@ extension CVAuxiliaryView {
         return UIBezierPath(cgPath: path)
     }
 
-    @objc func leftFlagPath() -> UIBezierPath {
+    func leftFlagPath() -> UIBezierPath {
         let flag = UIBezierPath()
         flag.move(to: CGPoint(x: bounds.width / 2, y: bounds.height / 2 + radius))
         flag.addLine(to: CGPoint(x: 0, y: bounds.height / 2 + radius))
@@ -132,7 +132,7 @@ extension CVAuxiliaryView {
         return UIBezierPath(cgPath: path)
     }
 
-    @objc func rectPath() -> UIBezierPath {
+    func rectPath() -> UIBezierPath {
 //        let midX = bounds.width / 2
         let midY = bounds.height / 2
 
