@@ -11,14 +11,14 @@ import UIKit
 public typealias WeekdaySymbolType = CVWeekdaySymbolType
 
 public final class CVCalendarMenuView: UIView {
-    public var symbols = [String]()
-    public var symbolViews: [UILabel]?
+    @objc public var symbols = [String]()
+    @objc public var symbolViews: [UILabel]?
 
     public var firstWeekday: Weekday? = .sunday
-    public var dayOfWeekTextColor: UIColor? = .darkGray
-    public var dayofWeekBackgroundColor: UIColor? = .clear
+    @objc public var dayOfWeekTextColor: UIColor? = .darkGray
+    @objc public var dayofWeekBackgroundColor: UIColor? = .clear
     public var dayOfWeekTextUppercase: Bool? = true
-    public var dayOfWeekFont: UIFont? = UIFont(name: "Avenir", size: 10)
+    @objc public var dayOfWeekFont: UIFont? = UIFont(name: "Avenir", size: 10)
     public var weekdaySymbolType: WeekdaySymbolType? = .short
 
     @IBOutlet public weak var menuViewDelegate: AnyObject? {
@@ -33,7 +33,7 @@ public final class CVCalendarMenuView: UIView {
         }
     }
 
-    public weak var delegate: MenuViewDelegate? {
+    @objc public weak var delegate: MenuViewDelegate? {
         didSet {
             setupAppearance()
             setupWeekdaySymbols()
@@ -53,7 +53,7 @@ public final class CVCalendarMenuView: UIView {
         super.init(coder: aDecoder)
     }
 
-    public func setupAppearance() {
+    @objc public func setupAppearance() {
         if let delegate = delegate {
             firstWeekday~>delegate.firstWeekday?()
             dayOfWeekTextColor~>delegate.dayOfWeekTextColor?()
@@ -64,7 +64,7 @@ public final class CVCalendarMenuView: UIView {
         }
     }
 
-    public func setupWeekdaySymbols() {
+    @objc public func setupWeekdaySymbols() {
         var calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         (calendar as NSCalendar).components([NSCalendar.Unit.month, NSCalendar.Unit.day], from: Foundation.Date())
         calendar.firstWeekday = firstWeekday!.rawValue
@@ -72,7 +72,7 @@ public final class CVCalendarMenuView: UIView {
         symbols = calendar.weekdaySymbols
     }
 
-    public func createDaySymbols() {
+    @objc public func createDaySymbols() {
         // Change symbols with their places if needed.
         let dateFormatter = DateFormatter()
         var weekdays: NSArray
@@ -128,7 +128,7 @@ public final class CVCalendarMenuView: UIView {
         }
     }
 
-    public func commitMenuViewUpdate() {
+    @objc public func commitMenuViewUpdate() {
         setNeedsLayout()
         layoutIfNeeded()
         if let _ = delegate {

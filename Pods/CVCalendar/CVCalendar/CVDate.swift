@@ -11,12 +11,12 @@ import UIKit
 public final class CVDate: NSObject {
     fileprivate let date: Foundation.Date
 
-    public let year: Int
-    public let month: Int
-    public let week: Int
-    public let day: Int
+    @objc public let year: Int
+    @objc public let month: Int
+    @objc public let week: Int
+    @objc public let day: Int
 
-    public init(date: Foundation.Date, calendar: Calendar = Calendar.current) {
+    @objc public init(date: Foundation.Date, calendar: Calendar = Calendar.current) {
         let dateRange = Manager.dateRange(date, calendar: calendar)
 
         self.date = date
@@ -28,7 +28,7 @@ public final class CVDate: NSObject {
         super.init()
     }
 
-    public init(day: Int, month: Int, week: Int, year: Int, calendar: Calendar = Calendar.current) {
+    @objc public init(day: Int, month: Int, week: Int, year: Int, calendar: Calendar = Calendar.current) {
         if let date = Manager.dateFromYear(year, month: month, week: week, day: day, calendar: calendar) {
             self.date = date
         } else {
@@ -50,7 +50,7 @@ extension CVDate {
         return Weekday(rawValue: components.weekday!)
     }
 
-    public func convertedDate(calendar: Calendar = Calendar.current) -> Foundation.Date? {
+    @objc public func convertedDate(calendar: Calendar = Calendar.current) -> Foundation.Date? {
         var comps = Manager.componentsForDate(Foundation.Date(), calendar: calendar)
 
         comps.year = year
@@ -63,12 +63,12 @@ extension CVDate {
 }
 
 extension CVDate {
-    public var globalDescription: String {
+    @objc public var globalDescription: String {
         let month = dateFormattedStringWithFormat("MMMM", fromDate: date)
         return "\(month) \(year)"
     }
 
-    public var commonDescription: String {
+    @objc public var commonDescription: String {
         let month = dateFormattedStringWithFormat("MMMM", fromDate: date)
         return "\(day) \(month), \(year)"
     }
