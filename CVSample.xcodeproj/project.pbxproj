@@ -13,9 +13,12 @@
 		78A4934D21C7CAB500B56BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A4934C21C7CAB500B56BEB /* Assets.xcassets */; };
 		78A4935021C7CAB500B56BEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A4934E21C7CAB500B56BEB /* LaunchScreen.storyboard */; };
 		78A4935321C7CAB500B56BEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4935221C7CAB500B56BEB /* main.m */; };
+		E1AA63BC36532F8CA91318AC /* Pods_CVSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493E0C0B87FA57C1B9969CF3 /* Pods_CVSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493E0C0B87FA57C1B9969CF3 /* Pods_CVSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66E708811F784D9A43367739 /* Pods-CVSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CVSample/Pods-CVSample.release.xcconfig"; sourceTree = "<group>"; };
 		78A4934021C7CAB400B56BEB /* CVSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A4934321C7CAB400B56BEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		78A4934421C7CAB400B56BEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		78A4934F21C7CAB500B56BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A4935121C7CAB500B56BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78A4935221C7CAB500B56BEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F03CD2F26E91593F40DED136 /* Pods-CVSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVSample/Pods-CVSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AA63BC36532F8CA91318AC /* Pods_CVSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				78A4934221C7CAB400B56BEB /* CVSample */,
 				78A4934121C7CAB400B56BEB /* Products */,
+				C0086F8B9E5DA25BC9AACE4D /* Pods */,
+				F853DC5935C3261DA0C23C2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = CVSample;
 			sourceTree = "<group>";
 		};
+		C0086F8B9E5DA25BC9AACE4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F03CD2F26E91593F40DED136 /* Pods-CVSample.debug.xcconfig */,
+				66E708811F784D9A43367739 /* Pods-CVSample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F853DC5935C3261DA0C23C2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				493E0C0B87FA57C1B9969CF3 /* Pods_CVSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78A4935621C7CAB500B56BEB /* Build configuration list for PBXNativeTarget "CVSample" */;
 			buildPhases = (
+				5BA59864DF673E04B6A15478 /* [CP] Check Pods Manifest.lock */,
 				78A4933C21C7CAB400B56BEB /* Sources */,
 				78A4933D21C7CAB400B56BEB /* Frameworks */,
 				78A4933E21C7CAB400B56BEB /* Resources */,
+				16749FD20B00A8FC6B5737B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +163,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16749FD20B00A8FC6B5737B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CVSample/Pods-CVSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVSample/Pods-CVSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BA59864DF673E04B6A15478 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CVSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		78A4933C21C7CAB400B56BEB /* Sources */ = {
@@ -285,12 +358,13 @@
 		};
 		78A4935721C7CAB500B56BEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F03CD2F26E91593F40DED136 /* Pods-CVSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFW99MC3FG;
 				INFOPLIST_FILE = CVSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manju.CVSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,12 +374,13 @@
 		};
 		78A4935821C7CAB500B56BEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66E708811F784D9A43367739 /* Pods-CVSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFW99MC3FG;
 				INFOPLIST_FILE = CVSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manju.CVSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
